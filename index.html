@@ -18,7 +18,8 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            margin-top: 9px;
+            padding-top: 9px;
+            background-color: white;
         }
         img {
             margin-left:4px;
@@ -51,6 +52,7 @@
             height:450px;
             padding:10px;
             position: relative;
+            
         
         }
         .p-title {
@@ -106,6 +108,31 @@
             top: 410px;
             left: 46%;
         }
+
+.sidebar {
+   height: 100vh;
+   width: 100vw;
+   background-color: rgb(192, 188, 188);
+   position: absolute;
+   top: 33px;
+   left: 390px;
+   transition: all linear 0.2s;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    
+}
+.sidebar button{
+    color:rgb(0, 0, 0);
+}
+
+/* .sidebar-show {
+    z-index:1;
+}
+.sidebar-hide {
+    z-index:-1;
+} */
 /* hamburger icon on different devices */
         @media (min-width: 819px) {
             .hamburger-icon{
@@ -170,13 +197,17 @@
 <div class="down-arrow"></div>
 
 </div>
+
+<div class="sidebar">
+<button>nice</button>
+</div>
     <div class="heading">nice</div>
 </body>
 
 <script>
     let hamburgerIcon = document.querySelector(".hamburger-icon");
     let heading = document.querySelector(".heading");
-
+    let sideBar = document.querySelector('.sidebar');
     let isHamburgerClicked = false;
 
     function handleSideBar(){
@@ -185,12 +216,24 @@
             console.log(`${isHamburgerClicked}`);
             isHamburgerClicked = true;
             heading.innerHTML = 'sidebar opened';
+            // sideBar.classList.remove('sidebar-hide');
+            // sideBar.classList.add('sidebar-show');
+            sideBar.style.left = "0px";
+
+
         }
         else {
             console.log("Sidebar closed");
             console.log(`${isHamburgerClicked}`);
             isHamburgerClicked = false;
             heading.innerHTML = 'sidebar closed';
+            // sideBar.classList.remove('sidebar-show');
+            // sideBar.classList.add('sidebar-hide');
+            sideBar.style.left = "390px";
+
+ 
+
+
 
         }
     }
