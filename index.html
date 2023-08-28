@@ -11,6 +11,9 @@
             margin: 0;
             box-sizing: border-box;
         }
+        /* body {
+            overflow: hidden;
+        } */
 
         /* top header content  */
         .top-header-content {
@@ -34,14 +37,23 @@
             margin-right:9px;
             
         }
-        .horizontal-line {
+        .horizontal-line-1,.horizontal-line-2,.horizontal-line-3 {
             width:100%;
             height:4px;
             border-radius: 4px;
             background-color: black;
             margin-bottom: 4px;
+            transition: transform 0.2s ease, opacity 0.3s ease;
         }
-
+.ham1 {
+    transform: translateY(2px) rotate(45deg);
+}
+.ham2{
+    transform: translateY(-6px) rotate(-45deg);
+}
+.ham3{
+    opacity: 0;
+}
         .body-banner {
             display: flex;
             flex-direction: column;
@@ -110,22 +122,25 @@
         }
 
 .sidebar {
-   height: 100vh;
-   width: 100vw;
-   background-color: rgb(192, 188, 188);
-   position: fixed;
-   top: 33px;
-   /* left: 390px; */
-   transition: all linear 0.2s;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   display: none;
-    
+ height: 100vh;
+ position: absolute;
+ top: 33px;
+ width: 100vw;
+ background-color: rgb(183, 183, 183);
+ z-index: 1;
+ /* display: block; */
+ display: none;
+ transition: linear all 0.2s;
+
 }
 .sidebar button{
     color:rgb(0, 0, 0);
+}
+.d-show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .sidebar-show {
@@ -174,15 +189,20 @@
     </style>
 </head>
 <body>
+    <div class="sidebar">
+        <button>nice</button>
+        </div>
     <header class="top-header-content">
         <img src="" alt="img">
 
         <div class="hamburger-icon">
-            <div class="horizontal-line"></div>
-            <div class="horizontal-line"></div>
-            <div class="horizontal-line"></div>
+            <div class="horizontal-line-1"></div>
+            <div class="horizontal-line-2"></div>
+            <div class="horizontal-line-3"></div>
         </div>
     </header>
+
+ 
 
    <div class="body-banner">
 
@@ -199,9 +219,7 @@
 
 </div>
 
-<div class="sidebar">
-<button>nice</button>
-</div>
+
     <div class="heading">nice</div>
 </body>
 
@@ -209,6 +227,10 @@
     let hamburgerIcon = document.querySelector(".hamburger-icon");
     let heading = document.querySelector(".heading");
     let sideBar = document.querySelector('.sidebar');
+    let hamburgerLine1 = document.querySelector('.horizontal-line-1');
+    let hamburgerLine2 = document.querySelector('.horizontal-line-2');
+    let hamburgerLine3 = document.querySelector('.horizontal-line-3');
+    
     let isHamburgerClicked = false;
 
     function handleSideBar(){
@@ -219,7 +241,13 @@
             heading.innerHTML = 'sidebar opened';
             // sideBar.classList.remove('sidebar-hide');
             // sideBar.classList.add('sidebar-show');
-            sideBar.style.display = "block";
+            // sideBar.style.display = "block";
+            sideBar.classList.toggle('d-show');
+            // hamburgerLine3.style.display = "none";
+            hamburgerLine1.classList.toggle('ham1');
+            hamburgerLine2.classList.toggle('ham2');
+            hamburgerLine3.classList.toggle('ham3');
+
 
 
         }
@@ -230,7 +258,15 @@
             heading.innerHTML = 'sidebar closed';
             // sideBar.classList.remove('sidebar-show');
             // sideBar.classList.add('sidebar-hide');
-            sideBar.style.display = "none";
+            // sideBar.style.display = "none";
+            sideBar.classList.toggle('d-show');
+            // hamburgerLine3.style.display = "block";
+            hamburgerLine1.classList.toggle('ham1');
+            hamburgerLine2.classList.toggle('ham2');
+            hamburgerLine3.classList.toggle('ham3');
+
+
+
 
 
  
