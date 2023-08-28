@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>optimtech solutions nepal</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         *{
             padding: 0;
@@ -126,23 +127,79 @@
  position: absolute;
  top: 33px;
  width: 100vw;
- background-color: rgb(183, 183, 183);
+ background-color: rgb(255, 255, 255);
  z-index: 1;
  /* display: block; */
  display: none;
  transition: linear all 0.2s;
 
 }
-.sidebar button{
-    color:rgb(0, 0, 0);
+.sidebar .top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+    margin-bottom:5px ;
+    padding-top: 10px;
+}
+.sidebar .second {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 65%;
+    margin-top:5px;
+
+}
+.sidebar .top a,.sidebar .second a {
+    text-decoration: none;
+    color: black;
+    
+}
+.sidebar .lists {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    margin-top: 58px;
+}
+.sidebar .lists .main-a {
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    font-weight: bold;
 }
 .d-show {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
+.drop-service,.drop-consulting,.drop-industries {
+    display: none;
+}
+
+
+
+.drop-a {
+    font-size: medium;
+    text-decoration: none;
+    padding: 4px;
+    color: black;
+}
+.drop-show {
+    display: flex;
+    flex-direction: column;
+    background-color: #e1e1e1;
+    width: 90%;
+    padding: 15px;
+    padding-top: 0px;
+    margin-left: 5%;
+    border-radius: 10px;
+    transition: all linear 0.4s;
+}
 /* .sidebar-show {
     z-index:1;
 }
@@ -190,8 +247,69 @@
 </head>
 <body>
     <div class="sidebar">
-        <button>nice</button>
+        <div class="top">
+        <a href="">9765862621</a>
+        <a href="">Blog</a>
+        <a href="">Login</a>
         </div>
+
+        <div class="second">
+            <a href="">Cyber Security Alerts</a>
+            <a href="">Careers</a>
+            </div>
+
+
+        <div class="lists">
+            <a href="" class="main-a">Who We Are</a>
+            <a href="" class="a-drop-down1 main-a">Services &nbsp; <i class="fa-solid fa-angle-down"></i></a>
+            <div class="drop-service">
+                <a href="" class="drop-a">Managed IT Service</a>
+                <a href="" class="drop-a">IT Support</a>
+                <a href="" class="drop-a">Cyber Security</a>
+                <a href="" class="drop-a">Cloud Computign & Migrations</a>
+                <a href="" class="drop-a">Wiring and Wireless Networks</a>
+                <a href="" class="drop-a">Software Development</a>
+                <a href="" class="drop-a">Systems Integration</a>
+                <a href="" class="drop-a">Existing Systems</a>
+                <a href="" class="drop-a">Marketing Services</a>
+                <a href="" class="drop-a">Website Design</a>
+            </div>
+            <a href="" class="a-drop-down2 main-a">Consulting &nbsp;<i class="fa-solid fa-angle-down"></i></a>
+            <div class="drop-consulting">
+                <a href="" class="drop-a">IT Consulting</a>
+                <a href="" class="drop-a">Business Transformation</a>
+                <a href="" class="drop-a">Growth & Strategy Planning</a>
+                <a href="" class="drop-a">Compliance & Security</a>
+                <a href="" class="drop-a">Merges & Aquisitions</a>
+                <a href="" class="drop-a">Technology Risk Assessment </a>
+                <a href="" class="drop-a">Operations</a>
+                <a href="" class="drop-a">Marketing</a>
+                <a href="" class="drop-a">Sales</a>
+                <a href="" class="drop-a">Recruiting & Staffing</a>
+            </div>
+            <a href="" class="a-drop-down3 main-a">Industries &nbsp;<i class="fa-solid fa-angle-down"></i></a>
+            <div class="drop-industries">
+                <a href="" class="drop-a">Healthcare & Medical</a>
+                <a href="" class="drop-a">Logistics & Distribution</a>
+                <a href="" class="drop-a">Finance & Insurance</a>
+                <a href="" class="drop-a">Professional Services</a>
+                <a href="" class="drop-a">Manufacturing</a>
+                <a href="" class="drop-a">Real Estate</a>
+                <a href="" class="drop-a">Retails & eCommerce</a>
+                <a href="" class="drop-a">Construction & Architecture</a>
+                <a href="" class="drop-a">Engineering & Architecture</a>
+                <a href="" class="drop-a">Legal & Law Firms</a>
+                <a href="" class="drop-a">Private Equity</a>
+                <a href="" class="drop-a">Education</a>
+                <a href="" class="drop-a">Non-Profit & Government</a>
+                <a href="" class="drop-a">Science & Research</a>
+                <a href="" class="drop-a">Entertainment & Hospitality</a>
+            </div>
+            <a href="" class="main-a">Contact</a>
+
+
+        </div>
+    </div>
     <header class="top-header-content">
         <img src="" alt="img">
 
@@ -227,10 +345,24 @@
     let hamburgerIcon = document.querySelector(".hamburger-icon");
     let heading = document.querySelector(".heading");
     let sideBar = document.querySelector('.sidebar');
+
     let hamburgerLine1 = document.querySelector('.horizontal-line-1');
     let hamburgerLine2 = document.querySelector('.horizontal-line-2');
     let hamburgerLine3 = document.querySelector('.horizontal-line-3');
     
+
+    let aDropDown1 = document.querySelector('.a-drop-down1');
+    let aDropDown2 = document.querySelector('.a-drop-down2');
+    let aDropDown3 = document.querySelector('.a-drop-down3');
+
+    let dropService = document.querySelector('.drop-service');
+    let dropConsulting = document.querySelector('.drop-consulting');
+    let dropIndustries = document.querySelector('.drop-industries');
+
+
+
+
+
     let isHamburgerClicked = false;
 
     function handleSideBar(){
@@ -275,7 +407,24 @@
 
         }
     }
+
+
+
     hamburgerIcon.addEventListener("click",handleSideBar);
+    aDropDown1.addEventListener('click',(event)=>{
+        event.preventDefault();
+        dropService.classList.toggle('drop-show');
+    });
+    aDropDown2.addEventListener('click',(event)=>{
+        event.preventDefault();
+        dropConsulting.classList.toggle('drop-show');
+
+    });
+    aDropDown3.addEventListener('click',(event)=>{
+        event.preventDefault();
+        dropIndustries.classList.toggle('drop-show');
+
+    });
 
 </script>
 </html>
